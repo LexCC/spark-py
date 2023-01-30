@@ -35,8 +35,26 @@ RUN apt-get update && \
     python3.8 -m pip install pip && \
     pip3 install --upgrade pip setuptools && \
     cd ${SPARK_HOME}/jars && \
-    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.2.1/hadoop-aws-3.2.1.jar && \
-    wget https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk/1.11.695/aws-java-sdk-1.11.695.jar && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.2/hadoop-aws-3.3.2.jar && \
+    wget https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.1026/aws-java-sdk-bundle-1.11.1026.jar && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-common/3.3.2/hadoop-common-3.3.2.jar && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.2/hadoop-mapreduce-client-core-3.3.2.jar && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-client/3.3.2/hadoop-yarn-client-3.3.2.jar && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-common/3.3.2/hadoop-yarn-common-3.3.2.jar && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs-client/3.3.2/hadoop-hdfs-client-3.3.2.jar && \
+    wget https://repo1.maven.org/maven2/net/java/dev/jets3t/jets3t/0.9.4/jets3t-0.9.4.jar && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client/3.3.2/hadoop-client-3.3.2.jar && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-api/3.3.2/hadoop-yarn-api-3.3.2.jar && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-annotations/3.3.2/hadoop-annotations-3.3.2.jar && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-jobclient/3.3.2/hadoop-mapreduce-client-jobclient-3.3.2.jar && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-server-common/3.3.2/hadoop-yarn-server-common-3.3.2.jar && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-shuffle/3.3.2/hadoop-mapreduce-client-shuffle-3.3.2.jar && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-common/3.3.2/hadoop-mapreduce-client-common-3.3.2.jar && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-app/3.3.2/hadoop-mapreduce-client-app-3.3.2.jar && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.2/hadoop-hdfs-3.3.2.jar && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-auth/3.3.2/hadoop-auth-3.3.2.jar && \
+    mkdir -p  /opt/spark/conf/ && \
+    touch /opt/spark/conf/hadoop-metrics2-s3a-file-system.properties && \
     # Removed the .cache to save space
     rm -r /root/.cache && rm -rf /var/cache/apt/*
 
