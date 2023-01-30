@@ -34,6 +34,9 @@ RUN apt-get update && \
     apt install -y  python3-pip && \
     python3.8 -m pip install pip && \
     pip3 install --upgrade pip setuptools && \
+    cd ${SPARK_HOME}/jars && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.2.1/hadoop-aws-3.2.1.jar && \
+    wget https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk/1.11.695/aws-java-sdk-1.11.695.jar && \
     # Removed the .cache to save space
     rm -r /root/.cache && rm -rf /var/cache/apt/*
 
